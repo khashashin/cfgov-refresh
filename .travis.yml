@@ -36,7 +36,9 @@ jobs:
       env: RUNTEST=frontend
     - env: RUNTEST=backend
     - stage: Run optional tests
-      env: RUNTEST=backend3
+      env: 
+        - RUNTEST=backend3
+        - TEST_RUNNER=cfgov.test.StdoutCapturingTestRunner
       python: "3.6"
     - stage: Update documentation
       script:
