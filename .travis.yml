@@ -30,11 +30,15 @@ env:
 jobs:
   fast_finish: true
   allow_failures: 
-    - env: RUNTEST=backend3
+    - env: 
+      - RUNTEST=backend3
+      - TEST_RUNNER=cfgov.test.StdoutCapturingTestRunner
   include:
     - stage: run tests
       env: RUNTEST=frontend
-    - env: RUNTEST=backend
+    - env: 
+      - RUNTEST=backend
+      - TEST_RUNNER=cfgov.test.StdoutCapturingTestRunner
     - stage: Run optional tests
       env: 
         - RUNTEST=backend3
