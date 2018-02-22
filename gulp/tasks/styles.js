@@ -295,9 +295,9 @@ function stylesApps() {
   apps.forEach( app => {
     streams.push(
       gulp.src(
-          `${ paths.unprocessed }/apps/${ app }/css/main.less`,
-          { allowEmpty: true }
-        )
+        `${ paths.unprocessed }/apps/${ app }/css/main.less`,
+        { allowEmpty: true }
+      )
         .pipe( gulpNewer( {
           dest:  `${ paths.processed }/apps/${ app }/css/main.css`,
           extra: configStyles.otherBuildTriggerFiles
