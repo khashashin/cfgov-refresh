@@ -30,9 +30,38 @@ class TestGetRegistrationFormFromPage(TestCase):
         registration_form_block = atomic.conference_registration_form
         set_stream_data(page, 'content', [registration_form_block])
 
+        rendered_block = get_registration_form_from_page(revision.page_id)
         self.assertEqual(
-            get_registration_form_from_page(revision.page_id),
-            registration_form_block
+            rendered_block['type'],
+            registration_form_block['type']
+        )
+        self.assertEqual(
+            rendered_block['value']['at_capacity_message'][0]['value'],
+            registration_form_block['value']['at_capacity_message'][0]['value']
+        )
+        self.assertEqual(
+            rendered_block['value']['code'],
+            registration_form_block['value']['code']
+        )
+        self.assertEqual(
+            rendered_block['value']['capacity'],
+            registration_form_block['value']['capacity']
+        )
+        self.assertEqual(
+            rendered_block['value']['failure_message'],
+            registration_form_block['value']['failure_message']
+        )
+        self.assertEqual(
+            rendered_block['value']['heading'],
+            registration_form_block['value']['heading']
+        )
+        self.assertEqual(
+            rendered_block['value']['sessions'],
+            registration_form_block['value']['sessions']
+        )
+        self.assertEqual(
+            rendered_block['value']['success_message'],
+            registration_form_block['value']['success_message']
         )
 
 

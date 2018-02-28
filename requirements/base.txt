@@ -40,7 +40,7 @@ simplejson==3.8.2
 six==1.10.0
 unicodecsv==0.14.1
 unipath>=1.1,<=2.0
-wagtail==1.10.1
+wagtail==1.13.1
 wagtail-flags==2.0.8
 wagtail-inventory==0.3
 wagtail-sharing==0.6.1
