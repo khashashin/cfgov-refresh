@@ -21,7 +21,8 @@ const formatTime = require( '../format-timestamp' );
 const params = require( './params' );
 
 require( '../../node_modules/rangeslider.js' );
-require( './tab' );
+const tab = require( './tab' );
+
 require( '../placeholder-polyfill' );
 
 // Load our handlebar templates.
@@ -1054,6 +1055,8 @@ function init() {
   if ( document.querySelectorAll( '.rate-checker' ).length === 0 ) {
     return;
   }
+
+  tab.init();
 
   renderSlider();
   renderChart();
